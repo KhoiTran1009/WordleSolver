@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Wordle Solver — Demo</title>
+        <link rel="stylesheet" href="../static/styles.css" />
+    </head>
+    <body>
+        <main class="game">
+            <header class="game-header">
+                <h1>Wordle Solver</h1>
+                <button id="restart" class="btn">Chơi lại</button>
+                <div>
+                    <select id="algorithm" class="algorithm-select">
+                        <option value="dfs">DFS</option>
+                        <option value="bfs">BFS</option>
+                        <option value="ucs">UCS</option>
+                        <option value="astar">A star</option>
+         
+                    </select>
+                    <button id="solve" class="btn">Gợi ý từ</button>
+                </div>
+                
+            </header>
+
+            <section id="message" class="message" aria-live="polite"></section>
+
+            <section id="grid" class="grid" aria-label="Bảng đoán"></section>
+
+            <section class="keyboard" id="keyboard" aria-label="Bàn phím">
+                <div class="key-row" id="row1"></div>
+                <div class="key-row" id="row2"></div>
+                <div class="key-row" id="row3"></div>
+            </section>
+        </main>
+
+        <script type="module" src="../static/app.js"></script>
+    </body>
+</html>
