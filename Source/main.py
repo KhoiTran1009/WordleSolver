@@ -3,6 +3,7 @@ from flask import render_template, jsonify
 from Astar import astar_solver
 import os
 from Entropy import entropySolver
+from BayesianSolver import solve as bayesian_solver
 import random
 app = flask.Flask(__name__, template_folder='templates')
 
@@ -48,7 +49,9 @@ def ai_send_guess():
     elif algorithm == 'entropy':
         newLength = min(1000, len(candidates))
         candidateArray = random.sample(candidates, newLength)
-        next_guess = entropySolver(words, candidateArray)  
+        next_guess = entropySolver(words, candidateArray)
+    elif algorithm == 'bayesian':
+        next_guess = bayesian_solver(words, candidates)
     else:
         next_guess = "apple"  # Default guess
     
